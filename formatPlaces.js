@@ -19,9 +19,10 @@ const replaceSpecialChars = (str) => {
 };
 
 const addData = (data) => {
-  placeObj.label = data;
-  places.push(placeObj);
-  placeObj = {};
+  // placeObj.label = data;
+  if (places.indexOf(data) === -1) {
+    places.push(data);
+  }
 };
 
 const formatPlaces = rawPlaces.map((place) => {
